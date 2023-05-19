@@ -2,28 +2,39 @@ import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { List } from "lucide-react"
+import { AspectRatio } from "@/components/ui/aspect-ratio"
+import { Projects } from "@/components/Projects"
+import { Experience } from "@/components/Experience"
 
 export default function IndexPage() {
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <div className="flex max-w-[980px] flex-col items-start gap-2">
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
-          Beautifully designed components <br className="hidden sm:inline" />
-          built with Radix UI and Tailwind CSS.
+    <section className="container w-full grid items-center justify-between gap-6 pb-8 pt-6 md:py-10">
+      <div className="grid grid-col items-center justify-between w-full gap-10 my-10 sm:gap-10">
+      <div className="flex w-full flex-col items-start">
+        <h1 className="text-4xl font-bold leading-tight sm:text-3xl md:text-5xl lg:text-6xl">
+          Unies Ananda Raja
         </h1>
-        <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl">
-          Accessible and customizable components that you can copy and paste
-          into your apps. Free. Open Source. And Next.js 13 Ready.
+        <div className="w-full text-lg text-muted-foreground my-4 sm:text-xl">
+        <p className="text-xl text-muted-foreground mt-4 mb-4 sm:text-xl">
+        Multidisciplinary professional with experience in the intersection of development and environmental sustainability.
+        </p> 
+        <p className="text-xl text-muted-foreground mt-4 mb-4 sm:text-xl">
+        Interested in developing AI-based apps for everyone.
         </p>
-      </div>
-      <div className="flex gap-4">
+        </div>
+        <div className="flex gap-4">
         <Link
-          href={siteConfig.links.docs}
+          href={siteConfig.links.contact}
           target="_blank"
           rel="noreferrer"
           className={buttonVariants({ size: "lg" })}
         >
-          Documentation
+          Reach Out
         </Link>
         <Link
           target="_blank"
@@ -34,6 +45,10 @@ export default function IndexPage() {
           GitHub
         </Link>
       </div>
+      </div>
+      </div>
+      <Projects />
+      <Experience />
     </section>
   )
 }
